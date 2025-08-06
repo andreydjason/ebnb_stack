@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "app/",
+    "baseUrl": "./app",
     "paths": {
-      "@/lib/*": ["lib/*"],
-      "@/css/*": ["css/*"],
-      "@/components/*": ["components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/css/*": ["./css/*"],
+      "@/components/*": ["./components/*"],
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],

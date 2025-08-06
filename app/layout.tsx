@@ -73,18 +73,21 @@ export default function RootLayout({
 
         {/* CABEÇALHO */}
         <header id="topo" className="bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
-          <nav className="flex items-center justify-between">
+          <nav className="items-center">
             <h1 className="text-xl font-bold">
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
-            <p id="header_versiculos" className="flex p-1 lead">
+            <p id="header_versiculos" className="p-1 lead">
               "Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim." — João 14:6
             </p>
 
             {/* MENU */}
             <ul className="flex space-x-6">
               <li>
-                <Link href="/teste" className="hover:underline">Início</Link>
+                <Link href="/" className="hover:underline">Ensinamentos</Link>
+              </li>
+              <li>
+                <Link href="/artigo" className="hover:underline">Artigo</Link>
               </li>
               <li>
                 <Link href="/sobre" className="hover:underline">Sobre</Link>
@@ -92,10 +95,25 @@ export default function RootLayout({
               <li>
                 <Link href="/contato" className="hover:underline">Contato</Link>
               </li>
+              <li>
+                <form className="flex space-x-6" role="search">
+                  <input
+                    id="search"
+                    className=""
+                    type="search"
+                    placeholder="Pesquisar"
+                    aria-label="Pesquisar"
+                    autoComplete="off"
+                  />
+                  <button className="" type="submit" id="button_pesquisar">
+                    Ir&nbsp;&gt;{/* MUDAR PARA UM ÍCONE */}
+                  </button>
+                </form>
+              </li>
             </ul>
           </nav>
         </header>
-        
+
         {/* CONTEÚDO */}
         {children}
       </body>
