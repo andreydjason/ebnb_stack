@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "app/",
+    "paths": {
+      "@/lib/*": ["lib/*"],
+      "@/css/*": ["css/*"],
+      "@/components/*": ["components/*"],
+    },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -7,7 +13,7 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "Preserve", // "module": "esnext",
+    "module": "esnext", // "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
