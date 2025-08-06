@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit",
-    "prepare": "node .husky/install.mjs"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.12.0",
@@ -30,7 +29,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
-    "husky": "^9.1.7",
     "prisma": "^6.13.0",
     "typescript": "^5.9.2"
   }

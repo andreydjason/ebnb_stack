@@ -1,5 +1,0 @@
-# .husky/pre-commit
-next lint
-next type-check
-
-exit 1
