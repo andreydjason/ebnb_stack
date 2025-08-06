@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 
 import LoadingSpinner from "@/components/loading_spinner";
 
-import Image from "next/image";
+//import Image from "next/image";
 
 export default async function ArtigoConteudoPage() {
   // Simula Carregamento
