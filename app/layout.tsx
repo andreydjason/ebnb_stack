@@ -87,7 +87,13 @@ export default function RootLayout({
                 <Link href="/" className="hover:underline">Ensinamentos</Link>
               </li>
               <li>
-                <Link href="/artigo" className="hover:underline">Artigo</Link>
+                <Link href="/artigos" className="hover:underline">Todos Artigos</Link>
+              </li>
+              <li>
+                <Link href="/artigo" className="hover:underline">/Artigo</Link>
+              </li>
+              <li>
+                <Link href="/artigo/teste" className="hover:underline">Artigo</Link>
               </li>
               <li>
                 <Link href="/sobre" className="hover:underline">Sobre</Link>

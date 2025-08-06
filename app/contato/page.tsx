@@ -1,4 +1,4 @@
-// artigo/page.tsx
+// artigos/page.tsx
 "use client"
 
 import { useEffect } from "react";
@@ -9,7 +9,7 @@ export default function Custom404() {
 
   useEffect(() => {
     // Redireciona para a home com mensagem na query string
-    router.replace("/?url=artigo");
+    router.replace("/?url=contato");
   }, [router]);
 
   return null; // Pode mostrar um loading, se quiser
