@@ -78,7 +78,7 @@ export default function RootLayout({
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
             <p id="header_versiculos" className="p-1 lead">
-              "Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim." — João 14:6
+              &quot;Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim.&quot; — João 14:6
             </p>
 
             {/* MENU */}
