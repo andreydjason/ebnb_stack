@@ -1,7 +1,10 @@
 // /conteudos/artigos/teste.tsx
 import Head from 'next/head'
 
-export default function ArtigoTestePage() {
+export default async function ArtigoTestePage() {
+  // Simula Carregamento
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   return (
     <>
       <Head>
