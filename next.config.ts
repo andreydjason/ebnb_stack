@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/artigo/:slug*',
-        destination: '/artigos/:slug*',
+        destination: '/articles/:slug*',
         permanent: false, // TODO: Change to true in production
       },
     ];
@@ -16,19 +16,20 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: '/artigos',
+        destination: '/articles',
+      },
+      {
         source: '/artigos/:slug*',
         destination: '/articles/:slug*',
-        permanent: false, // TODO: Change to true in production
       },
       {
-        source: '/contato/*',
-        destination: '/contact/*',
-        permanent: false, // TODO: Change to true in production
+        source: '/contato',
+        destination: '/contact',
       },
       {
-        source: '/sobre/*',
-        destination: '/about/*',
-        permanent: false, // TODO: Change to true in production
+        source: '/sobre',
+        destination: '/about',
       },
     ];
   },
