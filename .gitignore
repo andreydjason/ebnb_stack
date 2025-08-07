@@ -1,6 +1,9 @@
 # Ignorar parte admin (somente para desenvolvimento)
 /admin
 
+# Ignorar log do nextjs
+next.log
+
 Thumbs.db
 ehthumbs.db
 Desktop.ini
