@@ -8,6 +8,8 @@ import LinkProtection from '@/components/LinkProtection';
 import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
 //import ArticleSearchLoader from '@/components/ArticleSearchLoader';
 
+//import AccessibilityToggle from '@/components/AccessibilityToggle';
+
 import { Suspense } from 'react';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
@@ -98,20 +100,28 @@ export default async function RootLayout({
       <meta name="apple-mobile-web-app-title" content="EBNB" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* ACCESSIBILITY */}
-        <div className="div_acessibilidade">
-          <h2 className="visually-hidden text-center">
+        <noscript>
+          <div className="javascript-off">
+            <h2>
+              Seu navegador está com o JavaScript desabilitado. Algumas funcionalidades podem não funcionar corretamente.
+            </h2>
+          </div>
+        </noscript>
+        <div className="accessibility">
+          {/*<AccessibilityToggle />*/}
+          <h2 className="sr-only text-center">
             ESTAMOS TRABALHANDO PARA INCLUIR ACESSIBILIDADE NESTE SITE
             <br></br>
             DESCULPE O TRANSTORNO</h2>
         </div>
 
         {/* HEADER */}
-        <header id="topo" className="bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
+        <header className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
           <nav className="items-center">
             <h1 className="text-xl font-bold">
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
-            <p id="header_versiculos" className="p-1 lead">
+            <p className="header-versiculos p-1 lead">
               {verse}
             </p>
 
@@ -136,7 +146,7 @@ export default async function RootLayout({
               <li>
                 <form className="flex space-x-6" role="search">
                   <LayoutSearchTeaching />
-                  <button className="" type="submit" id="button_pesquisar">
+                  <button className="button-pesquisar" type="submit" id="button_pesquisar">
                     Ir&nbsp;&gt;{/* CHANGE TO AN ICON */}
                   </button>
                 </form>

@@ -2,6 +2,7 @@
 import { getAllArticles, getArticleBySlug } from '@/lib/articles';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
+import ReadTimer from "@/components/ReadTimer";
 import FakeLoader from '@/components/FakeLoader';
 
 // This function generates static routes at build time
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
 
 type ArticleProps = {
   frontmatter: {
-    titulo: string;
+    title: string;
     data: string;
     resumo?: string;
   };
@@ -34,8 +35,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     return <p>Conteúdo do artigo não disponível.</p>;
   }
 
-  if (!frontmatter.titulo) {
-    frontmatter.titulo = "Sem título";
+  if (!frontmatter.title) {
+    frontmatter.title = "Sem título";
   }
   if (!frontmatter.data) {
     frontmatter.data = new Date().toISOString();
@@ -47,9 +48,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   
   return (
     <FakeLoader>
-      <article className="prose lg:prose-xl mx-auto p-4">
+      <ReadTimer />
+      <article className="prose md:prose-lg lg:prose-xl mx-auto p-4 prose-img:rounded-xl prose-a:text-blue-600">
         {/* Header information (Frontmatter) */}
-        <h1>{frontmatter.titulo}</h1>
+        <h1>{frontmatter.title}</h1>
         <p className="text-gray-500">Publicado em {new Date(frontmatter.data).toLocaleDateString('pt-BR')}</p>
 
         <hr />

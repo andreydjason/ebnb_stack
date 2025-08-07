@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/articles';
 
-import ReadTimer from "@/components/ReadTimer";
 import FakeLoader from '@/components/FakeLoader';
 
 type Article = {
@@ -19,7 +18,6 @@ export default async function ArticleListPage() {
   return (
     <FakeLoader>
       <div className="container mx-auto max-w-3xl p-4">
-        <ReadTimer />
         <h1 className="text-4xl font-bold mb-8">Todos artigos</h1>
         <div className="space-y-6">
           {articles.map((article) => (

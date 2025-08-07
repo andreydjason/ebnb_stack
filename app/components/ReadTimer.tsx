@@ -11,5 +11,9 @@ export default function ReadTimer() {
     setCount(count + 1);
   }, 1000);
 
-  return <p className="text-xl">Tempo decorrido: {count} segundos</p>;
+  return (
+    <p className="text-xl text-center">
+      Tempo de leitura decorrido: {count} segundos
+    </p>
+  );
 }
