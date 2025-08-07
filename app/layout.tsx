@@ -4,10 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Link from "next/link";
 
-import ProtecaoDeLinks from './components/ProtecaoDeLinks';
-import CarregadorDeArtigo from './components/CarregadorDeArtigo';
-
-import LayoutPesquisaEnsinamentos from "./components/LayoutPesquisaEnsinamentos";
+import LinkProtection from './components/LinkProtection';
+import LayoutSearchTeaching from "./components/LayoutSearchTeaching";
+//import ArticleSearchLoader from './components/ArticleSearchLoader';
 
 import "@/css/globals.css";
 import "@/css/style.css";
@@ -66,8 +65,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json"
 };
 
-// Versículos aleatórios no cabeçalho
-const versiculos = [
+// Random verses in the header
+const verses = [
   '“Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim.” — João 14:6',
   '“Porque Deus amou o mundo de tal maneira...” – João 3:16',
   '“O Senhor é meu pastor, nada me faltará.” – Salmos 23:1',
@@ -76,8 +75,8 @@ const versiculos = [
   '“Alegrai-vos na esperança, sede pacientes na tribulação.” – Romanos 12:12'
 ];
 
-function pegarVersiculoAleatorio() {
-  return versiculos[Math.floor(Math.random() * versiculos.length)];
+function getRandomVerse() {
+  return verses[Math.floor(Math.random() * verses.length)];
 }
 
 export default function RootLayout({
@@ -85,7 +84,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const versiculo = pegarVersiculoAleatorio();
+  const verse = getRandomVerse();
 
   return (
     <html lang="pt-BR">
@@ -95,7 +94,7 @@ export default function RootLayout({
       />
       <meta name="apple-mobile-web-app-title" content="EBNB" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* ACESSIBILIDADE */}
+        {/* ACCESSIBILITY */}
         <div className="div_acessibilidade">
           <h2 className="visually-hidden text-center">
             ESTAMOS TRABALHANDO PARA INCLUIR ACESSIBILIDADE NESTE SITE
@@ -103,30 +102,24 @@ export default function RootLayout({
             DESCULPE O TRANSTORNO</h2>
         </div>
 
-        {/* CABEÇALHO */}
+        {/* HEADER */}
         <header id="topo" className="bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
           <nav className="items-center">
             <h1 className="text-xl font-bold">
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
             <p id="header_versiculos" className="p-1 lead">
-              {versiculo}
+              {verse}
             </p>
 
             {/* MENU */}
-            {/* ALTERAR MENU PARA APARECER AO DAR SCROLL-TOP */}
+            {/* CHANGE MENU TO APPEAR ON SCROLL-TOP */}
             <ul className="flex space-x-6">
               <li>
                 <Link href="/" className="hover:underline">Ensinamentos</Link>
               </li>
               <li>
                 <Link href="/artigos" className="hover:underline">Todos Artigos</Link>
-              </li>
-              <li>
-                <Link href="/artigo" className="hover:underline">/Artigo</Link>
-              </li>
-              <li>
-                <Link href="/artigo/teste" className="hover:underline">Teste</Link>
               </li>
               <li>
                 <Link href="/api/hello" className="hover:underline">API</Link>
@@ -139,9 +132,9 @@ export default function RootLayout({
               </li>
               <li>
                 <form className="flex space-x-6" role="search">
-                  <LayoutPesquisaEnsinamentos />
+                  <LayoutSearchTeaching />
                   <button className="" type="submit" id="button_pesquisar">
-                    Ir&nbsp;&gt;{/* MUDAR PARA UM ÍCONE */}
+                    Ir&nbsp;&gt;{/* CHANGE TO AN ICON */}
                   </button>
                 </form>
               </li>
@@ -149,23 +142,22 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* CONTEÚDO */}
+        {/* CONTENT */}
         {children}
 
-        {/* COMPONENTES */}
-        <ProtecaoDeLinks />
-        <CarregadorDeArtigo href="/artigos/exemplo.html" />
+        {/* COMPONENTS */}
+        <LinkProtection />
       </body>
     </html>
   );
 };
 
-// INCLUIR PESQUISA
-// INCLUIR SEGURANÇA HTTP HEADERS
-// INCLUIR DESIGN RESPONSIVO SE/QUANDO NECESSÁRIO
-// INCLUIR ACESSIBILIDADE - AUMENTO E DIMINUIÇÃO DE LETRAS, VISUALIZAÇÃO/LEITURA PARA DEFICIENTES, LEITURA EM VOZ, TEMA CLARO E ESCURO, ETC
-// INCLUIR SUPORTE PARA LEITURA DE TEXTO DA DIREITA PARA ESQUERDA - E CDN E/OU NOVO DOMÍNIO PARA QUE POSSA SER ACESSADO DE OUTROS PAÍSES COM LIMITAÇÕES (PESQUISAR SE ISSO É VIÁVEL E SEGURO)
-// INCLUIR PARA RECEBER NOVIDADES NO CELULAR/EMAIL
-// INCLUIR SUPORTE COMPLETO PARA PADRÕES DA WEB
-// INCLUIR POSSIBILIDADE DE COMENTAR NAS POSTAGENS, MAS COM MODERAÇÃO DE SUPERVISOR
-// INCLUIR QUE ESTE SITE NÃO TEM SUPORTE AO IE
+// INCLUDE SEARCH
+// INCLUDE HTTP SECURITY HEADERS
+// INCLUDE RESPONSIVE DESIGN IF/WHEN NEEDED
+// INCLUDE ACCESSIBILITY - INCREASE AND DECREASE FONT SIZE, VISUALIZATION/READING FOR DISABLED, VOICE READING, LIGHT AND DARK THEME, ETC
+// INCLUDE SUPPORT FOR RIGHT-TO-LEFT TEXT READING - AND CDN AND/OR NEW DOMAIN SO IT CAN BE ACCESSED FROM OTHER COUNTRIES WITH RESTRICTIONS (RESEARCH IF THIS IS VIABLE AND SAFE)
+// INCLUDE TO RECEIVE NEWS ON MOBILE/EMAIL
+// INCLUDE FULL SUPPORT FOR WEB STANDARDS
+// INCLUDE POSSIBILITY TO COMMENT ON POSTS, BUT WITH SUPERVISOR MODERATION
+// INCLUDE THAT THIS SITE DOES NOT SUPPORT IE

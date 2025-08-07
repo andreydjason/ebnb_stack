@@ -4,8 +4,9 @@ export default function LoadingSpinner() {
     // Add fallback UI that will be shown while the route is loading.
     // <LoadingSkeleton />
     <section>
-        <div className="p-8 text-center text-gray-700">
-            <p>Carregando...</p>
+        <div className="loader-spinner p-8 text-center text-gray-700 mt-5">
+          <div className="spinner"></div>
+          <p>Carregando aguarde...</p>
         </div>
     </section>
   )

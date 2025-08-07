@@ -1,8 +1,8 @@
-// components/ProtecaoDeLinks.tsx
+// components/LinkProtection.tsx
 "use client"
 import { useEffect } from 'react';
 
-export default function ProtecaoDeLinks() {
+export default function LinkProtection() {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       const target = e.target as HTMLAnchorElement;

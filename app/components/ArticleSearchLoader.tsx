@@ -1,4 +1,4 @@
-// components/CarregadorDeArtigo.tsx
+// components/ArticleSearchLoader.tsx
 "use client"
 import { useState } from 'react';
 
@@ -6,7 +6,7 @@ interface Props {
   href: string;
 }
 
-export default function CarregadorDeArtigo({ href }: Props) {
+export default function ArticleSearchLoader({ href }: Props) {
   const [loading, setLoading] = useState(false);
   const [conteudo, setConteudo] = useState<string | null>(null);
   const [erro, setErro] = useState(false);

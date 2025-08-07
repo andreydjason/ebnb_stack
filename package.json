@@ -15,7 +15,9 @@
     "@tailwindcss/cli": "^4.1.11",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "gray-matter": "^4.0.3",
     "next": "^15.4.6",
+    "next-mdx-remote": "^5.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.11"

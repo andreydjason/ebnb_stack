@@ -3,10 +3,6 @@ import Image from "next/image";
 
 export default function Inicio()
   {
-  // const domNode = document.getElementById('app');
-  // const root = ReactDOM.createRoot(domNode);
-  // root.render(<h1>Develop. Preview. Ship.</h1>);
-
   return (
     <div id="app">
       <p className="flex p-6"></p>
