@@ -135,6 +135,18 @@ alias projects='home && cd projects'
 alias ebnb='home && cd projects && cd EBNB_Prototipo1'
 alias ebnb-stack='home && cd projects && cd ebnb_stack'
 
+# Iniciar sevidor dev, mostrando o PID do serviço
+alias npm-run-dev='nohup npm run dev > next.log 2>&1 & echo $!'
+
+# Ver o PID do sevidor npm-dev
+alias npm-dev-pid='ps aux | grep "npm run dev"'
+
+# Parar servidor npm-dev
+alias npm-stop-dev='pkill -f "npm run dev"'
+
+# Resetar o servidor npm-dev
+alias npm-reset-dev='"nextstop && nextdev"'
+
 # Apagar arquivos de Zona
 alias clear-zone-files='find . -name "*Zone.Identifier" -type f -delete'
 
@@ -147,6 +159,9 @@ export PGDATA="/var/lib/postgresql/16/main"
 
 # Rodar PostgreSQL
 alias postgresql-run='sudo service postgresql start > /dev/null 2>&1'
+
+# Parar PostgreSQL
+alias postgresql-stop='sudo service postgresql stop'
 
 # Conectar PostgreSQL
 alias postgresql-connect='sudo -u postgres psql'
@@ -175,11 +190,11 @@ postgresql_run() {
 }
 
 # Parar PostgreSQL
-postgresql_stop() {
-  echo "⛔ Parando servidor PostgreSQL..."
-  #pg_ctl -D "$PGDATA" stop
-  sudo service postgresql stop
-}
+# postgresql_stop() {
+#   echo "⛔ Parando servidor PostgreSQL..."
+#   #pg_ctl -D "$PGDATA" stop
+#   sudo service postgresql stop
+# }
 
 # Criar um novo banco de dados PostgreSQL
 postgresql_stop_create_db() {
