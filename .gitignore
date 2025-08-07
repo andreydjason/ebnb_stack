@@ -1,3 +1,6 @@
+# Ignorar parte admin (somente para desenvolvimento)
+/admin
+
 Thumbs.db
 ehthumbs.db
 Desktop.ini

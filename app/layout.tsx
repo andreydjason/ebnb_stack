@@ -82,6 +82,7 @@ export default function RootLayout({
             </p>
 
             {/* MENU */}
+            {/* ALTERAR MENU PARA APARECER AO DAR SCROLL-TOP */}
             <ul className="flex space-x-6">
               <li>
                 <Link href="/" className="hover:underline">Ensinamentos</Link>
