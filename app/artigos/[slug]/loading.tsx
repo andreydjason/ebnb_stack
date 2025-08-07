@@ -1,5 +1,5 @@
-// app/artigo/[slug]/loading.tsx
- 
+// app/artigos/[slug]/loading.tsx
+
 //import { Suspense } from 'react';
 import LoadingSpinner from "@/components/LoadingSpinner";
 

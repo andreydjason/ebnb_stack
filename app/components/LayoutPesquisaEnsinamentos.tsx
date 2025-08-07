@@ -1,3 +1,4 @@
+// components/PesquisaEnsinamentos.tsx
 "use client";
 import { useState } from 'react';
 import PesquisaEnsinamentos from "@/components/PesquisaEnsinamentos";

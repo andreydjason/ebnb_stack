@@ -1,4 +1,4 @@
-// /conteudos/artigos/teste.tsx
+// conteudos/artigos/teste.tsx
 export const titulo = "Meu Primeiro Artigo";
 
 export const conteudo = `

@@ -1,4 +1,4 @@
-// pages/404.tsx
+// app/404.tsx
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 

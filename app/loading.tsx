@@ -1,3 +1,5 @@
+// app/loading.tsx
+
 //import { Suspense } from 'react';
 import LoadingSpinner from "@/components/LoadingSpinner";
 

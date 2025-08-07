@@ -1,4 +1,4 @@
-// app/api/artigos/[slug]/route.ts
+// app/api/artigos/[slug]/page.tsx
 import { NextResponse } from "next/server";
 
 export async function GET(

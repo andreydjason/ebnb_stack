@@ -1,3 +1,4 @@
+// components/LoadingSpinner.tsx
 export default function LoadingSpinner() {
   return (
     // Add fallback UI that will be shown while the route is loading.

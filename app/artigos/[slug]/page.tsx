@@ -1,6 +1,6 @@
-// app/artigo/[slug]/page.tsx
+// app/artigos/[slug]/page.tsx
 import { notFound } from 'next/navigation'
-import { Suspense } from 'react'
+//import { Suspense } from 'react'
 
 interface Props {
   params: { slug: string }

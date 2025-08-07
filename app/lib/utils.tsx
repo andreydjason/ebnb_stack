@@ -1,4 +1,4 @@
-// utils.ts
+// lib/utils.ts
 export const sanitizeInput = (str: string): string =>
   str.replace(/[<>"'/\\&]/g, '');
 
