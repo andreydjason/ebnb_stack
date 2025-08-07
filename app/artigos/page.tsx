@@ -1,26 +1,5 @@
-// artigos/page.tsx
-"use client"
-
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-
-export default function Custom404() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Redireciona para a home com mensagem na query string
-    router.replace("/?url=artigos");
-  }, [router]);
-
-  return null; // Pode mostrar um loading, se quiser
-}
-
-
-
-/*
+// /app/artigos/page.tsx
 import { Suspense } from 'react';
-//import Artigo from 'Artigo.js';
-
 import LoadingSpinner from "@/components/loading_spinner";
 
 export default async function TodosArtigosConteudoPage() {
@@ -32,7 +11,6 @@ export default async function TodosArtigosConteudoPage() {
       <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
         <div className="a">
           <h1 className="text-3xl font-bold underline">
-            {/* <h1>{artigo.texto}</h1> /}
             <Suspense fallback={<Loading />}>
               Todos Artigos
             </Suspense>
@@ -46,4 +24,3 @@ export default async function TodosArtigosConteudoPage() {
 function Loading() {
   return <LoadingSpinner />
 }
-*/
