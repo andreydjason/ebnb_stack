@@ -4,9 +4,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Link from "next/link";
 
-import LinkProtection from './components/LinkProtection';
-import LayoutSearchTeaching from "./components/LayoutSearchTeaching";
-//import ArticleSearchLoader from './components/ArticleSearchLoader';
+import LinkProtection from '@/components/LinkProtection';
+import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
+//import ArticleSearchLoader from '@/components/ArticleSearchLoader';
+
+import { Suspense } from 'react';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 import "@/css/globals.css";
 import "@/css/style.css";
@@ -79,7 +82,7 @@ function getRandomVerse() {
   return verses[Math.floor(Math.random() * verses.length)];
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -143,7 +146,9 @@ export default function RootLayout({
         </header>
 
         {/* CONTENT */}
-        {children}
+        <Suspense fallback={<LoadingSpinner />}>
+          {children}
+        </Suspense>
 
         {/* COMPONENTS */}
         <LinkProtection />

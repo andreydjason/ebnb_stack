@@ -8,13 +8,12 @@ export default function LayoutTeachingSearch() {
 
   const handleSearch = (cleanTerm: string) => {
     setSearchTerm(cleanTerm);
-    console.log("Clean:", cleanTerm);
+    console.log("Pesquisa:", cleanTerm);
   };
 
   return (
     <>
-        <TeachingSearch onSearch={handleSearch} />
-        {searchTerm && <p>Procurando por: <strong>{searchTerm}</strong></p>}
+      <TeachingSearch onSearch={handleSearch} />
     </>
   );
 }

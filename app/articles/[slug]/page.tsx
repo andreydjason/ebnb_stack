@@ -2,6 +2,8 @@
 import { getAllArticles, getArticleBySlug } from '@/lib/articles';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
+import FakeLoader from '@/components/FakeLoader';
+
 // This function generates static routes at build time
 export async function generateStaticParams() {
   const articles = getAllArticles();
@@ -44,15 +46,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   }
   
   return (
-    <article className="prose lg:prose-xl mx-auto p-4">
-      {/* Header information (Frontmatter) */}
-      <h1>{frontmatter.titulo}</h1>
-      <p className="text-gray-500">Publicado em {new Date(frontmatter.data).toLocaleDateString('pt-BR')}</p>
+    <FakeLoader>
+      <article className="prose lg:prose-xl mx-auto p-4">
+        {/* Header information (Frontmatter) */}
+        <h1>{frontmatter.titulo}</h1>
+        <p className="text-gray-500">Publicado em {new Date(frontmatter.data).toLocaleDateString('pt-BR')}</p>
 
-      <hr />
+        <hr />
 
-      {/* Article content (MDX) */}
-      <MDXRemote source={content} />
-    </article>
+        {/* Article content (MDX) */}
+        <MDXRemote source={content} />
+      </article>
+    </FakeLoader>
   );
 }

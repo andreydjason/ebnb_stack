@@ -4,9 +4,8 @@
     "paths": {
       "@/lib/*": ["./lib/*"],
       "@/css/*": ["./css/*"],
+      "@/hooks/*": ["./hooks/*"],
       "@/components/*": ["./components/*"],
-      "@/conteudos/*": ["./app/conteudos/*"],
-      "@/artigos/*": ["./app/conteudos/artigos/*"],
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
