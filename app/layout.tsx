@@ -4,14 +4,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Link from "next/link";
 
-import LinkProtection from '@/components/LinkProtection';
-import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
+import { Suspense } from 'react';
+import LoadingSpinner from '@/components/LoadingSpinner';
+
+//import LinkProtection from '@/components/LinkProtection';
+//import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
 //import ArticleSearchLoader from '@/components/ArticleSearchLoader';
 
 //import AccessibilityToggle from '@/components/AccessibilityToggle';
-
-import { Suspense } from 'react';
-import LoadingSpinner from '@/components/LoadingSpinner';
 
 import "@/css/globals.css";
 import "@/css/style.css";
@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const thisSiteUrl = "http://localhost:3000"; // TODO - MUDAR PARA HTTPS QUANDO EM PRODUÇÃO 
+const thisSiteUrl = "http://localhost:3000"; // TODO - MUDAR A URL E HTTPS QUANDO EM PRODUÇÃO 
 
 export const metadata: Metadata = {
   metadataBase: new URL(thisSiteUrl),
@@ -99,25 +99,18 @@ export default async function RootLayout({
       />
       <meta name="apple-mobile-web-app-title" content="EBNB" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* ACCESSIBILITY */}
-        <noscript>
-          <div className="javascript-off">
-            <h2>
-              Seu navegador está com o JavaScript desabilitado. Algumas funcionalidades podem não funcionar corretamente.
-            </h2>
-          </div>
-        </noscript>
-        <div className="accessibility">
-          {/*<AccessibilityToggle />*/}
-          <h2 className="sr-only text-center">
-            ESTAMOS TRABALHANDO PARA INCLUIR ACESSIBILIDADE NESTE SITE
-            <br></br>
-            DESCULPE O TRANSTORNO</h2>
-        </div>
-
         {/* HEADER */}
         <header className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
           <nav className="items-center">
+            {/* ACCESSIBILITY */}
+            <noscript>
+              <div className="javascript-off">
+                <h2>
+                  Seu navegador está com o JavaScript desabilitado. Algumas funcionalidades podem não funcionar corretamente.
+                </h2>
+              </div>
+            </noscript>
+            {/*<AccessibilityToggle />*/}
             <h1 className="text-xl font-bold">
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
@@ -145,7 +138,7 @@ export default async function RootLayout({
               </li>
               <li>
                 <form className="flex space-x-6" role="search">
-                  <LayoutSearchTeaching />
+                  {/*<LayoutSearchTeaching />*/}
                   <button className="button-pesquisar" type="submit" id="button_pesquisar">
                     Ir&nbsp;&gt;{/* CHANGE TO AN ICON */}
                   </button>
@@ -161,7 +154,7 @@ export default async function RootLayout({
         </Suspense>
 
         {/* COMPONENTS */}
-        <LinkProtection />
+        {/*<LinkProtection />*/}
       </body>
     </html>
   );

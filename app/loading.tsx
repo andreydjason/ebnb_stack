@@ -1,10 +1,10 @@
 // app/loading.tsx
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-export default function Loading() {
+export default async function Loading() {
   return (
     <>
-        <LoadingSpinner />
+      <LoadingSpinner />
     </>
   );
 };

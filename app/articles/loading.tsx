@@ -1,12 +1,10 @@
 // app/articles/page.tsx
-
-//import { Suspense } from 'react';
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-export default function Loading() {
+export default async function Loading() {
   return (
     <>
-        <LoadingSpinner />
+      <LoadingSpinner />
     </>
   );
 };
