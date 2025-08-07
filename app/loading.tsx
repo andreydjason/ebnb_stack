@@ -6,7 +6,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 export default function Loading() {
   return (
     <>
-        <LoadingSpinner />
+        <h1>CARREGANDO...</h1>
     </>
   );
 };

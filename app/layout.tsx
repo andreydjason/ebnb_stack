@@ -26,6 +26,18 @@ const thisSiteUrl = "http://localhost:3000"; // TODO - MUDAR PARA HTTPS QUANDO E
 
 export const metadata: Metadata = {
   metadataBase: new URL(thisSiteUrl),
+
+  icons: {
+    icon: {
+      url: "/favicon.ico",
+      href: "/favicon.ico",
+    },
+    apple: {
+      url: "/apple-favicon.ico",
+      href: "/apple-favicon.ico",
+    },
+  },
+  
   robots: { index: false, follow: false },
   title: { absolute: "Ensinamentos Baseados na Bíblia Sagrada", template: "%s | Ensinamentos Baseados na Bíblia Sagrada" },
   description: "Descrição Ensinamentos Baseados na Bíblia Sagrada",
@@ -50,11 +62,8 @@ export const metadata: Metadata = {
     siteName: 'Ensinamentos Baseados na Bíblia Sagrada',
     images: [{ url: thisSiteUrl + '/og.png' }]
   },
-  icons: {
-    icon: thisSiteUrl + "/favicon.png",
-    //apple: thisSiteUrl + "/apple-icon.png"
-  },
-  manifest: thisSiteUrl + "manifest.json"
+
+  manifest: "/manifest.json"
 };
 
 // Versículos aleatórios no cabeçalho
@@ -84,6 +93,7 @@ export default function RootLayout({
         name="format-detection"
         content="telephone=no, date=no, email=no, address=no"
       />
+      <meta name="apple-mobile-web-app-title" content="EBNB" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* ACESSIBILIDADE */}
         <div className="div_acessibilidade">
@@ -116,7 +126,10 @@ export default function RootLayout({
                 <Link href="/artigo" className="hover:underline">/Artigo</Link>
               </li>
               <li>
-                <Link href="/artigo/teste" className="hover:underline">Artigo</Link>
+                <Link href="/artigo/teste" className="hover:underline">Teste</Link>
+              </li>
+              <li>
+                <Link href="/api/hello" className="hover:underline">API</Link>
               </li>
               <li>
                 <Link href="/sobre" className="hover:underline">Sobre</Link>
@@ -144,8 +157,6 @@ export default function RootLayout({
         <CarregadorDeArtigo href="/artigos/exemplo.html" />
       </body>
     </html>
-
-
   );
 };
 
