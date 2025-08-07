@@ -1,1 +1,1 @@
-EBNB
+EBNB using Node.js, React, Next.Js, Typescript, Prisma, PostgreSQL, TailWindCSS, ESlint, Express
