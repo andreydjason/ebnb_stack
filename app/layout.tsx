@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Link from "next/link";
 
+import ProtecaoDeLinks from './components/ProtecaoDeLinks';
+import CarregadorDeArtigo from './components/CarregadorDeArtigo';
+
+import LayoutPesquisaEnsinamentos from "./components/LayoutPesquisaEnsinamentos";
+
 import "@/css/globals.css";
 import "@/css/style.css";
 
@@ -51,11 +56,27 @@ export const metadata: Metadata = {
   manifest: thisSiteUrl + "manifest.json"
 };
 
+// Versículos aleatórios no cabeçalho
+const versiculos = [
+  '“Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim.” — João 14:6',
+  '“Porque Deus amou o mundo de tal maneira...” – João 3:16',
+  '“O Senhor é meu pastor, nada me faltará.” – Salmos 23:1',
+  '“Tudo posso naquele que me fortalece.” – Filipenses 4:13',
+  '“Sede fortes e corajosos, não temais.” – Deuteronômio 31:6',
+  '“Alegrai-vos na esperança, sede pacientes na tribulação.” – Romanos 12:12'
+];
+
+function pegarVersiculoAleatorio() {
+  return versiculos[Math.floor(Math.random() * versiculos.length)];
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const versiculo = pegarVersiculoAleatorio();
+
   return (
     <html lang="pt-BR">
       <meta
@@ -78,7 +99,7 @@ export default function RootLayout({
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
             <p id="header_versiculos" className="p-1 lead">
-              &quot;Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim.&quot; — João 14:6
+              {versiculo}
             </p>
 
             {/* MENU */}
@@ -104,14 +125,7 @@ export default function RootLayout({
               </li>
               <li>
                 <form className="flex space-x-6" role="search">
-                  <input
-                    id="search"
-                    className=""
-                    type="search"
-                    placeholder="Pesquisar"
-                    aria-label="Pesquisar"
-                    autoComplete="off"
-                  />
+                  <LayoutPesquisaEnsinamentos />
                   <button className="" type="submit" id="button_pesquisar">
                     Ir&nbsp;&gt;{/* MUDAR PARA UM ÍCONE */}
                   </button>
@@ -123,6 +137,10 @@ export default function RootLayout({
 
         {/* CONTEÚDO */}
         {children}
+
+        {/* COMPONENTES */}
+        <ProtecaoDeLinks />
+        <CarregadorDeArtigo href="/artigos/exemplo.html" />
       </body>
     </html>
 

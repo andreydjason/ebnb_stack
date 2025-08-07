@@ -1,5 +1,5 @@
 //import { Suspense } from 'react';
-import LoadingSpinner from "@/components/loading_spinner";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function Loading() {
   return (

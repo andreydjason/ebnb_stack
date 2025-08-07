@@ -5,6 +5,7 @@
       "@/lib/*": ["./lib/*"],
       "@/css/*": ["./css/*"],
       "@/components/*": ["./components/*"],
+      "@/artigos/*": ["./conteudos/artigos/*"],
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],

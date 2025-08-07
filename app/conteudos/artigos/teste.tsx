@@ -1,24 +1,15 @@
 // /conteudos/artigos/teste.tsx
-import Head from 'next/head'
+export const titulo = "Meu Primeiro Artigo";
 
-export default async function ArtigoTestePage() {
-  // Simula Carregamento
-  await new Promise(resolve => setTimeout(resolve, 1000));
+export const conteudo = `
+  <p>Conteúdo HTML do meu primeiro artigo...</p>
+`;
 
+export default function MeuPrimeiroArtigo() {
   return (
-    <>
-      <Head>
-        <title>Título Teste Head</title>
-      </Head>
-      <main className="prose mx-auto p-4">
-        <h1>Título Teste</h1>
-        <p>
-          Teste...
-        </p>
-        <p>
-          Teste...
-        </p>
-      </main>
-    </>
-  )
+    <article>
+      <h1>{titulo}</h1>
+      <div dangerouslySetInnerHTML={{ __html: conteudo }} />
+    </article>
+  );
 }

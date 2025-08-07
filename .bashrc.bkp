@@ -136,16 +136,13 @@ alias ebnb='home && cd projects && cd EBNB_Prototipo1'
 alias ebnb-stack='home && cd projects && cd ebnb_stack'
 
 # Iniciar sevidor dev, mostrando o PID do serviço
-alias npm-run-dev='nohup npm run dev > next.log 2>&1 & echo $!'
+alias npm-run-dev='pm2 start npm --name "nextjs" -- run dev'
 
 # Parar servidor npm-dev
-alias npm-stop-dev='pkill -f "npm run dev"'
+alias npm-stop-dev='pm2 stop nextjs'
 
-# Resetar o servidor npm-dev
-alias npm-reset-dev='npm-stop-dev && npm-run-dev'
-
-# Ver o PID do sevidor npm-dev
-alias npm-dev-pid='ps aux | grep "npm run dev"'
+# Lista os sevidors npm que estão rodando
+alias npm-list='pm2 list'
 
 # Apagar arquivos de Zona
 alias clear-zone-files='find . -name "*Zone.Identifier" -type f -delete'

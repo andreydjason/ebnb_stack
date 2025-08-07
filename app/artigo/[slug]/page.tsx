@@ -18,9 +18,7 @@ export default async function ArtigoPage({ params }: Props) {
 
   return (
     <main className="p-6 max-w-3xl mx-auto">
-      <Suspense fallback={<p>Carregando artigo...</p>}>
-        <ArtigoComponent />
-      </Suspense>
+      <ArtigoComponent />
     </main>
   )
 }
