@@ -8,7 +8,7 @@ export default function LoadingSpinner() {
 
   return (
     <section>
-      <div className="loader-spinner p-8 text-center text-gray-700 mt-5">
+      <div className="loader-spinner p-8 text-center text-gray-700 mt-5 dark:text-white">
         <div className="spinner"></div>
         <p>Carregando aguarde...</p>
         {carregamentoFalso && <p>*Carregamento falso para testes*</p>}

@@ -54,7 +54,7 @@ export default async function ArticlePage(ArticleProps: { params: Promise<{ slug
   return (
     <FakeLoader>
       <ReadTimer />
-      <article className="prose md:prose-lg lg:prose-xl mx-auto p-4 prose-img:rounded-xl prose-a:text-blue-600">
+      <article className="prose md:prose-lg lg:prose-xl mx-auto p-4 prose-img:rounded-xl prose-a:text-blue-600 dark:prose-invert">
         {/* Cabeçalho */}
         <h1>{safeFrontmatter.title}</h1>
         <p className="text-gray-500">

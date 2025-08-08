@@ -11,7 +11,7 @@ export default function ReadTimer() {
   }, 1000);
 
   return (
-    <div className="divider-box-top text-center mb-4 border shadow p-4 bg-gray-50">
+    <div className="divider-box-top text-center mb-4 border shadow p-4 bg-gray-50 dark:bg-gray-900 dark:text-white dark:border-gray-600">
       <p>
         Tempo de leitura decorrido: {count} segundos
       </p>

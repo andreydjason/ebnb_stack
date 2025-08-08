@@ -106,7 +106,7 @@ export default function RootLayout({
         content="telephone=no, date=no, email=no, address=no"
       />
       <meta name="apple-mobile-web-app-title" content="EBNB" />
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} dark:bg-gray-700 dark:text-white`} >
         {/* ACCESSIBILITY */}
         <AccessibilityProvider>
           <AccessibilityToggle />
@@ -155,6 +155,14 @@ export default function RootLayout({
         </header>
 
         {/* CONTENT */}
+        <div className="text-center m-1 text-white dark:text-white">
+          <small>
+            O site está escuro? É o tema do seu computador ou celular no modo Escuro
+            <br></br>
+            (Em breve um botão aqui para mudar automaticamente entre os temas claro e escuro)
+          </small>
+        </div>
+        
         <Suspense fallback={<LoadingSpinner />}>
           {children}
         </Suspense>
@@ -163,7 +171,7 @@ export default function RootLayout({
         {/* SOBRE */}
         <div
           id="sobre"
-          className="about flex p-5 m-20 pb-3 text-1x2 border rounded-xl bg-gray-100 rounded-x5"
+          className="about flex p-5 m-20 pb-3 text-1x2 border rounded-xl bg-gray-100 rounded-x5 dark:bg-gray-800 dark:text-white"
         >
           <div className="row g-4 py-2">
             <div className="col d-flex align-items-start">
@@ -197,7 +205,7 @@ export default function RootLayout({
                   Devemos <strong>ser como os Bereanos</strong>, como diz em{' '}
                   <strong>Atos 17:11</strong>
                 </p>
-                <blockquote>
+                <blockquote className="bg-white mt-7 dark:bg-gray-800 dark:text-white">
                   &quot;Ora, estes de Bereia eram mais nobres que os de Tessalônica, pois
                   receberam a palavra com todo o interesse, examinando todos os dias as
                   Escrituras para ver se as coisas eram, de fato, assim.&quot;
@@ -209,7 +217,7 @@ export default function RootLayout({
                   <br></br>
                   Como está escrito em <strong>Gálatas 1:8-9</strong>, e disse Jesus:
                 </p>
-                <blockquote>
+                <blockquote className="bg-white mt-7 dark:bg-gray-800 dark:text-white">
                   &quot;Mas, ainda que nós mesmos ou um anjo do céu vos pregasse outro
                   evangelho além do que já vos pregamos, seja anátema. Assim, como já
                   vo-lo dissemos, agora de novo também vo-lo digo: se alguém vos
@@ -229,7 +237,7 @@ export default function RootLayout({
         </div>
 
         {/* Rodapé */}
-        <footer className="bg-dark text-white text-center py-4">
+        <footer className="bg-dark text-white dark:bg-gray-900 dark:text-white dark:border-t-1 dark:border-gray-600 text-center py-4">
           <p className="mb-1">
             “Conhecereis a verdade, e a verdade vos libertará.” — João 8:32
           </p>
