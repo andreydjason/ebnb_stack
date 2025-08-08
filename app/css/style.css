@@ -44,7 +44,6 @@ article ul li {
 }
 
 .loader-spinner {
-  display: none;
   text-align: center;
   font-family: sans-serif;
   margin: 20px auto;
@@ -58,6 +57,10 @@ article ul li {
   height: 30px;
   animation: spin 0.8s linear infinite;
   margin: 0 auto 10px;
+}
+
+.search-input {
+  margin-right: 10px;;
 }
 
 .divider-top {

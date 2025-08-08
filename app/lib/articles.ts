@@ -42,7 +42,7 @@ export function getAllArticles() {
   });
 }
 
-export function getArticleBySlug(slug: string) {
+export async function getArticleBySlug(slug: string) {
   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
   try {
     const fileContents = fs.readFileSync(fullPath, "utf8");

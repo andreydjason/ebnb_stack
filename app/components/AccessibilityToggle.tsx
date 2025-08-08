@@ -1,28 +1,19 @@
-// components/AccessibilityToggle
+// components/AccessibilityToggle.tsx
 'use client';
 
-import { useState } from 'react';
+import { useAccessibility } from '@/contexts/AccessibilityContext';
 
-export default function VisibilityToggle() {
-  const [isVisible, setIsVisible] = useState(true);
+export default function AccessibilityToggle() {
+  const { isVisible, hide } = useAccessibility();
 
-  const handleToggle = () => {
-    setIsVisible(!isVisible);
-  };
+  if (!isVisible) return null; // se estiver invisível, nem renderiza
 
   return (
-    <div>
-      <button onClick={handleToggle}>
-        {isVisible ? 'Acessibilidade' : 'Acessibilidade'}
-      </button>
-
-      {!isVisible && (
-        <>
-            <div id="accessibility-content" role="region" aria-live="polite">
-                <p>(Recursos para Acessibilidade)</p>
-            </div>
-        </>
-      )}
-    </div>
+    <button
+      onClick={hide}
+      className="accessibility-button rounded-full bg-sky-700 px-4 py-2 text-white hover:bg-sky-600"
+    >
+      Botão Acessibilidade
+    </button>
   );
 }

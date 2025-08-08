@@ -11,7 +11,7 @@ type Article = {
   summary: string;
 };
 
-export default async function ArticleListPage() {
+export default function ArticleListPage() {
   const articles: Article[] = getAllArticles();
 
   return (

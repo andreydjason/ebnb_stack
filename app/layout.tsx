@@ -4,14 +4,18 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import Link from "next/link";
 
+import { FaSearch } from "react-icons/fa";
+
 import { Suspense } from 'react';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
 //import LinkProtection from '@/components/LinkProtection';
-//import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
+
+import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
 //import ArticleSearchLoader from '@/components/ArticleSearchLoader';
 
-//import AccessibilityToggle from '@/components/AccessibilityToggle';
+import AccessibilityToggle from '@/components/AccessibilityToggle';
+import { AccessibilityProvider } from '@/contexts/AccessibilityContext';
 
 import "@/css/globals.css";
 import "@/css/style.css";
@@ -84,7 +88,7 @@ function getRandomVerse() {
   return verses[Math.floor(Math.random() * verses.length)];
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -102,7 +106,7 @@ export default async function RootLayout({
         {/* HEADER */}
         <header className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
           <nav className="items-center">
-            {/* ACCESSIBILITY */}
+            {/* NO JAVASCRIPT */}
             <noscript>
               <div className="javascript-off">
                 <h2>
@@ -110,7 +114,10 @@ export default async function RootLayout({
                 </h2>
               </div>
             </noscript>
-            {/*<AccessibilityToggle />*/}
+            {/* ACCESSIBILITY */}
+            <AccessibilityProvider>
+              <AccessibilityToggle />
+            </AccessibilityProvider>
             <h1 className="text-xl font-bold">
               <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
             </h1>
@@ -137,10 +144,10 @@ export default async function RootLayout({
                 <Link href="/contato" className="hover:underline">Contato</Link>
               </li>
               <li>
-                <form className="flex space-x-6" role="search">
-                  {/*<LayoutSearchTeaching />*/}
+                <form className="flex" role="search">
+                  <LayoutSearchTeaching />
                   <button className="button-pesquisar" type="submit" id="button_pesquisar">
-                    Ir&nbsp;&gt;{/* CHANGE TO AN ICON */}
+                    <FaSearch />
                   </button>
                 </form>
               </li>
