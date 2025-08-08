@@ -22,7 +22,7 @@ export default function TeachingSearch({ onSearch }: TeachingSearchProps) {
       placeholder="Pesquisar..."
       value={searchTerm}
       onChange={handleChange}
-      className="search-input p-1 border border-gray-300 rounded-lg text-black outline outline-white/5 rounded-full px-3 py-1 text-sm leading-5 font-semibold text-white hover:bg-gray-700"
+      className="search-input mr-2 border border-gray-300 rounded-lg text-black outline outline-white/5 rounded-full px-3 py-2 text-sm leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
       aria-label="Campo de pesquisa"
     />
   );

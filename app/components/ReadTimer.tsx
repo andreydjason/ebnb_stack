@@ -11,8 +11,13 @@ export default function ReadTimer() {
   }, 1000);
 
   return (
-    <p className="text-xl text-center">
-      Tempo de leitura decorrido: {count} segundos
-    </p>
+    <div className="divider-box-top text-center mb-4 border shadow p-4 bg-gray-50">
+      <p>
+        Tempo de leitura decorrido: {count} segundos
+      </p>
+      <p>
+        Usar internamente também para gravar estatísticas de leitura, como tempo médio por artigo.
+      </p>
+    </div>
   );
 }

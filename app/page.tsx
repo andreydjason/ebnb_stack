@@ -27,7 +27,7 @@ export default async function Inicio() {
           <Image className="size-12 shrink-0" src="" alt="" />
           <div>
             <div className="text-xl font-medium text-black dark:text-white">Teste</div>
-            <p className="text-gray-500 dark:text-gray-400">Progredindo!</p>
+            <p className="text-gray-500 dark:text-gray-400">Aprendendo</p>
           </div>
         </div>
       </div>
@@ -35,7 +35,6 @@ export default async function Inicio() {
 
       <div className="container mx-auto max-w-3xl p-4">
         <div className="divider"></div>
-        <h1 className="text-4xl text-center font-bold mb-8">Ensinamentos Baseados<br></br>na Bíblia Sagrada</h1>
         <div className="space-y-6">
           {articles.map((article) => (
             <div key={article.slug} className="border p-4 rounded-lg">

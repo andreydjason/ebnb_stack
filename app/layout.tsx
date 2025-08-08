@@ -15,7 +15,11 @@ import LayoutSearchTeaching from "@/components/LayoutSearchTeaching";
 //import ArticleSearchLoader from '@/components/ArticleSearchLoader';
 
 import AccessibilityToggle from '@/components/AccessibilityToggle';
+import AccessibilityPanel from '@/components/AccessibilityPanel';
 import { AccessibilityProvider } from '@/contexts/AccessibilityContext';
+
+import NavMenu from '@/components/NavMenu';
+import MobileNav from '@/components/MobileNav';
 
 import "@/css/globals.css";
 import "@/css/style.css";
@@ -103,55 +107,50 @@ export default function RootLayout({
       />
       <meta name="apple-mobile-web-app-title" content="EBNB" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* ACCESSIBILITY */}
+        <AccessibilityProvider>
+          <AccessibilityToggle />
+          <AccessibilityPanel />
+        </AccessibilityProvider>
         {/* HEADER */}
-        <header className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
+
+        <header id="topo" className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
           <nav className="items-center">
             {/* NO JAVASCRIPT */}
             <noscript>
               <div className="javascript-off">
-                <h2>
+                <h3>
                   Seu navegador está com o JavaScript desabilitado. Algumas funcionalidades podem não funcionar corretamente.
-                </h2>
+                </h3>
               </div>
             </noscript>
-            {/* ACCESSIBILITY */}
-            <AccessibilityProvider>
-              <AccessibilityToggle />
-            </AccessibilityProvider>
-            <h1 className="text-xl font-bold">
-              <Link href="/">Ensinamentos Baseados na Bíblia Sagrada</Link>
-            </h1>
-            <p className="header-versiculos p-1 lead">
+            <Link href="/">
+              <h1 className="text-4xl text-center font-bold sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Ensinamentos Baseados<br></br>na Bíblia Sagrada</h1>
+            </Link>
+            <p className="header-verses p-1 mb-5 lead">
               {verse}
             </p>
 
             {/* MENU */}
             {/* CHANGE MENU TO APPEAR ON SCROLL-TOP */}
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="/" className="hover:underline">Ensinamentos</Link>
-              </li>
-              <li>
-                <Link href="/artigos" className="hover:underline">Todos Artigos</Link>
-              </li>
-              <li>
-                <Link href="/api/hello" className="hover:underline">API</Link>
-              </li>
-              <li>
-                <Link href="/sobre" className="hover:underline">Sobre</Link>
-              </li>
-              <li>
-                <Link href="/contato" className="hover:underline">Contato</Link>
-              </li>
-              <li>
+            <div className="flex justify-center mb-4">
+              {/* Menu desktop */}
+              <ul className="nav-menu hidden md:flex space-x-6">
+                <NavMenu />
+              </ul>
+
+              {/* Menu mobile toggle */}
+              <MobileNav />
+              <li className="search-input flex items-center">
                 <form className="flex" role="search">
                   <LayoutSearchTeaching />
-                  <button className="button-pesquisar" type="submit" id="button_pesquisar">
+                  <button className="search-button rounded-full px-3 py-0
+                  hover:bg-sky-600 hover:ring-1 hover:ring-sky-500" type="submit" id="button_pesquisar">
                     <FaSearch />
                   </button>
                 </form>
               </li>
-            </ul>
+            </div>
           </nav>
         </header>
 
@@ -159,6 +158,85 @@ export default function RootLayout({
         <Suspense fallback={<LoadingSpinner />}>
           {children}
         </Suspense>
+
+        {/* ABOUT */}
+        {/* SOBRE */}
+        <div
+          id="sobre"
+          className="about flex p-5 m-20 pb-3 text-1x2 border rounded-xl bg-gray-100 rounded-x5"
+        >
+          <div className="row g-4 py-2">
+            <div className="col d-flex align-items-start">
+              <h2 className="about-title pb-2 border-bottom">
+                O que é o &quot;Ensinamentos Baseados na Bíblia Sagrada&quot;?
+              </h2>
+              <div>
+                <p>
+                  Somos uma plataforma de <strong>ensinamentos</strong> com{' '}
+                  <strong>funtamentos na Bíblia Sagrada Cristã</strong>, mais
+                  especificamente a <strong>Bíblia Sagrada Evangélica</strong>.
+                  <br />
+                  <br />
+                  A maioria dos textos bíblicos citados neste site podem ser
+                  encontrados em diversas Bíblias de versões diferentes, com pequenas
+                  diferenças de escrita, mas a compreensão e entendimento do texto é
+                  o mesmo, não muda.
+                  <br />
+                  <br />
+                  Buscamos pesquisar e nos aprofundar nos assuntos tratados aqui. E
+                  também, pesquisamos outras versões e traduções em que foram
+                  escritos os textos, incluindo isto em cada conteúdo quando possível
+                  ou necessário,{' '}
+                  <strong>
+                    trazendo o melhor entendimento possível sobre cada assunto e cada
+                    mensagem
+                  </strong>
+                  .
+                  <br />
+                  <br />
+                  Devemos <strong>ser como os Bereanos</strong>, como diz em{' '}
+                  <strong>Atos 17:11</strong>
+                </p>
+                <blockquote>
+                  &quot;Ora, estes de Bereia eram mais nobres que os de Tessalônica, pois
+                  receberam a palavra com todo o interesse, examinando todos os dias as
+                  Escrituras para ver se as coisas eram, de fato, assim.&quot;
+                </blockquote>
+                <br />
+                <p>
+                  <strong>Também devemos sempre buscar nas Escrituras</strong> se o
+                  que dizem e ensinam é verdadeiro, caso contrário, é anátema.
+                  <br></br>
+                  Como está escrito em <strong>Gálatas 1:8-9</strong>, e disse Jesus:
+                </p>
+                <blockquote>
+                  &quot;Mas, ainda que nós mesmos ou um anjo do céu vos pregasse outro
+                  evangelho além do que já vos pregamos, seja anátema. Assim, como já
+                  vo-lo dissemos, agora de novo também vo-lo digo: se alguém vos
+                  anunciar outro evangelho além do que já recebestes, seja anátema.&quot;
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <div className="row py-0 my-0">
+            <p className="text-center py-0 my-0">
+              <a href="#topo" className="btn btn-outline-secondary">
+                &uarr; Voltar ao topo
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Rodapé */}
+        <footer className="bg-dark text-white text-center py-4">
+          <p className="mb-1">
+            “Conhecereis a verdade, e a verdade vos libertará.” — João 8:32
+          </p>
+          <small>© 2025 Ensinamentos Baseados na Bíblia Sagrada. Todos os direitos reservados.</small>
+          {/* Ensinamentos Bíblicos */}
+        </footer>
+
 
         {/* COMPONENTS */}
         {/*<LinkProtection />*/}

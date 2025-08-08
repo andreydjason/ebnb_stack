@@ -2,6 +2,7 @@
 'use client';
 
 import { useAccessibility } from '@/contexts/AccessibilityContext';
+import { FaUniversalAccess } from "react-icons/fa6";
 
 export default function AccessibilityToggle() {
   const { isVisible, hide } = useAccessibility();
@@ -11,9 +12,9 @@ export default function AccessibilityToggle() {
   return (
     <button
       onClick={hide}
-      className="accessibility-button rounded-full bg-sky-700 px-4 py-2 text-white hover:bg-sky-600"
+      className="accessibility-button absolute right-0 top-0 m-3 rounded-full bg-sky-700 px-2 py-2 text-white hover:bg-sky-600 hover:ring-1 hover:ring-sky-500"
     >
-      Botão Acessibilidade
+      <FaUniversalAccess />
     </button>
   );
 }

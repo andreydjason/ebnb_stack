@@ -54,6 +54,6 @@ export async function getArticleBySlug(slug: string) {
         content,
     };
   } catch (error) {
-    return null;
+    return error;
   }
 }

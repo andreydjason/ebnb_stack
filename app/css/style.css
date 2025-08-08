@@ -1,34 +1,11 @@
-body {
-  background-color: #ccc;
-}
-
 footer {
+  background-color: black;
   border-top: 2px solid #000;
-}
-
-blockquote {
-  background-color: #f8f9fa;
-  border-left: 5px solid #ccc;
-  margin-left: 18px;
-  padding: 10px;
-}
-
-blockquote p:last-child {
-  margin: 0;
-}
-
-blockquote footer {
-  border-top: 0;
-  display: inline;
 }
 
 hr {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
-}
-
-article ul li {
-  list-style: none;
 }
 
 .sr-only {
@@ -59,8 +36,88 @@ article ul li {
   margin: 0 auto 10px;
 }
 
+header h1, header h2, header h3 {
+  font-size: xx-large;
+}
+
+.nav-menu-mobile ul {
+  margin-top: 0.1rem;
+  padding: 1rem;
+  padding-top: 0;
+  padding-bottom: 1.2rem;
+  padding-right: 2rem;
+}
+.nav-menu-mobile li {
+  margin-top: 1rem;
+}
+
 .search-input {
-  margin-right: 10px;;
+  margin-left: 1rem;
+  width: 10rem;
+}
+.search-button {
+    position: relative;
+    right: 0.6rem;
+}
+
+article p {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+article ul {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+article ul li {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+article ul li>p {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+article>blockquote {
+  margin: 1rem;
+}
+
+blockquote {
+  background-color: #f8f9fa;
+  border-left: 5px solid #ccc;
+  margin-top: 0;
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+
+blockquote p:last-child {
+  margin: 0;
+}
+
+blockquote footer {
+  border-top: 0;
+  display: inline;
+}
+
+.about {
+  margin: 2rem;
+  margin-bottom: 3rem;
+}
+.about-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .divider-top {
@@ -96,6 +153,16 @@ article ul li {
   border-width: 1px;
 }
 
+.divider-box-top {
+  width: 100%;
+  border: solid #ccc;
+  border-width: 1px 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0,  0, 0.1);
+  border-radius: 0.25rem;}
+
 .teaching {
   text-decoration: none;
 }
@@ -117,18 +184,19 @@ article ul li {
   text-decoration: underline;
 }
 
+article .text-gray-500 {
+  margin-bottom: 0;
+}
+
 .article-loading-error {
   margin-top: 1rem !important;
 }
 
 .about blockquote {
   background-color: #fff;
+  margin-top: 0.7rem;;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
-}
-
-body {
-  background-color: #fff !important;
 }

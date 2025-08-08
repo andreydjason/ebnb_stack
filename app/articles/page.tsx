@@ -17,7 +17,7 @@ export default function ArticleListPage() {
   return (
     <FakeLoader>
       <div className="container mx-auto max-w-3xl p-4">
-        <h1 className="text-4xl font-bold mb-8">Todos artigos</h1>
+        <h1 className="text-center text-4xl font-bold mb-6 mt-4">Todos Ensinamentos Bíblicos</h1>
         <div className="space-y-6">
           {articles.map((article) => (
             <div key={article.slug} className="border p-4 rounded-lg">
