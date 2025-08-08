@@ -114,7 +114,7 @@ export default function RootLayout({
         </AccessibilityProvider>
         {/* HEADER */}
 
-        <header id="topo" className="header-topo bg-dark text-white text-center p-4 namespace w-full bg-gray-800 text-white py-4 px-8 shadow-md">
+        <header id="topo" className="header-topo bg-gray-800 text-white text-center p-4 namespace w-full text-white py-4 px-8 shadow-md">
           <nav className="items-center">
             {/* NO JAVASCRIPT */}
             <noscript>
@@ -237,7 +237,7 @@ export default function RootLayout({
         </div>
 
         {/* Rodapé */}
-        <footer className="bg-dark text-white dark:bg-gray-900 dark:text-white dark:border-t-1 dark:border-gray-600 text-center py-4">
+        <footer className="bg-black text-white dark:bg-gray-900 dark:text-white dark:border-t-1 dark:border-gray-600 text-center py-4">
           <p className="mb-1">
             “Conhecereis a verdade, e a verdade vos libertará.” — João 8:32
           </p>

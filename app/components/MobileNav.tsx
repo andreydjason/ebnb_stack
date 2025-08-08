@@ -42,7 +42,7 @@ export default function MobileNav() {
 
       {/* Menu Dropdown */}
       <ul
-        className={`justify-left bg-dark bg-gray-800 absolute left-0 w-screen text-white shadow-md origin-top transition-transform transform z-50
+        className={`justify-left bg-gray-800 absolute left-0 w-screen text-white shadow-md origin-top transition-transform transform z-50
           ${isOpen ? 'scale-y-100' : 'scale-y-0 pointer-events-none'}
         `}
         style={{ transitionDuration: '150ms' }}
